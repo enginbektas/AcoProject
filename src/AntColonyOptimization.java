@@ -25,6 +25,7 @@ public class AntColonyOptimization {
     private Random random = new Random();
     private double probabilities[];
 
+    private int attempts = 10;
     private int currentIndex;
 
     private int[] bestTourOrder;
@@ -57,7 +58,7 @@ public class AntColonyOptimization {
      * Perform ant optimization
      */
     public void startAntOptimization() {
-        IntStream.rangeClosed(1, 10)
+        IntStream.rangeClosed(1, attempts)
                 .forEach(i -> {
                     System.out.println("Attempt #" + i);
                     solve();
